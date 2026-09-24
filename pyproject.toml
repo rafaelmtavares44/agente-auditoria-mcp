@@ -1,0 +1,12 @@
+[project]
+name = "agente-auditoria-mcp"
+version = "0.2.0"
+description = "Agente de auditoria estática de código Python e documentação de APIs via MCP (N2 Tecnologias Emergentes)"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "real_api: teste que chama a API real da Anthropic (requer ANTHROPIC_API_KEY)",
+]

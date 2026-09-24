@@ -1,0 +1,27 @@
+# Segredos
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# Saídas de execução (versionar só evidências selecionadas em docs/evidencias/)
+output/*
+!output/.gitkeep
+logs/*
+!logs/.gitkeep
+
+# SO/IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Intermediário do relatório (o PDF e o .md são versionados)
+docs/relatorio/relatorio.html

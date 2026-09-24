@@ -1,0 +1,333 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Documentação gerada por auditoria estática (auth_service.py + order_api.py)",
+    "version": "0.1.0",
+    "description": "Gerado exclusivamente por análise estática de código. Limitações: (1) autenticação, cabeçalhos e formatos de erro só aparecem se declarados explicitamente no código-fonte; (2) endpoints sem response_model/anotação de retorno têm resposta marcada como 'Não declarado no código'; (3) não houve execução do código nem validação de comportamento em runtime; (4) roteador de auth_service.py (prefixo /auth) e app de order_api.py (sem prefixo) foram combinados neste único documento apenas para fins de auditoria."
+  },
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "summary": "desconhecido",
+        "operationId": "login",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Não declarado no código"
+          }
+        }
+      }
+    },
+    "/auth/login/safe": {
+      "post": {
+        "summary": "Login com consulta parametrizada",
+        "description": "Autentica o usuário usando consulta parametrizada e segredo vindo do ambiente.",
+        "operationId": "login_safe",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Retorno de login com token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/me": {
+      "get": {
+        "summary": "desconhecido",
+        "operationId": "me",
+        "tags": [
+          "auth"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Não declarado no código"
+          }
+        }
+      }
+    },
+    "/auth/me/safe": {
+      "get": {
+        "summary": "Dados do usuário autenticado",
+        "description": "Valida a assinatura do token antes de confiar nas claims.",
+        "operationId": "me_safe",
+        "tags": [
+          "auth"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Não declarado no código (anotação de retorno: dict, sem schema definido)"
+          }
+        }
+      }
+    },
+    "/orders/{order_id}": {
+      "get": {
+        "summary": "desconhecido",
+        "operationId": "get_order",
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "description": "Tipo não declarado no código"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Não declarado no código"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove um pedido",
+        "description": "Remove o pedido; erros internos são registrados no log e não expostos ao cliente.",
+        "operationId": "delete_order",
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Pedido removido (sem corpo de resposta)"
+          },
+          "500": {
+            "description": "Erro interno (HTTPException declarada no código)"
+          }
+        }
+      }
+    },
+    "/orders": {
+      "get": {
+        "summary": "Lista pedidos por status",
+        "description": "Consulta parametrizada: o valor de status nunca é concatenado ao SQL.",
+        "operationId": "list_orders",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 20,
+              "default": "open"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de pedidos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrderOut"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "desconhecido",
+        "operationId": "create_order",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Não declarado no código (status_code=201 declarado, corpo de resposta não anotado)"
+          }
+        }
+      }
+    },
+    "/orders/discount": {
+      "post": {
+        "summary": "desconhecido",
+        "operationId": "calculate_discount",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscountRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Não declarado no código"
+          }
+        }
+      }
+    },
+    "/orders/discount/safe": {
+      "post": {
+        "summary": "Calcula desconto a partir de literal numérico",
+        "description": "Aceita apenas literais Python (números), sem executar código.",
+        "operationId": "calculate_discount_safe",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscountRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Não declarado no código (anotação de retorno: dict, sem schema definido)"
+          },
+          "422": {
+            "description": "Valor informado não é numérico (HTTPException declarada no código)"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LoginRequest": {
+        "type": "object",
+        "required": [
+          "username",
+          "password"
+        ],
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "TokenResponse": {
+        "type": "object",
+        "required": [
+          "access_token"
+        ],
+        "properties": {
+          "access_token": {
+            "type": "string"
+          },
+          "token_type": {
+            "type": "string",
+            "default": "bearer"
+          }
+        }
+      },
+      "OrderIn": {
+        "type": "object",
+        "required": [
+          "product_id",
+          "quantity"
+        ],
+        "properties": {
+          "product_id": {
+            "type": "integer"
+          },
+          "quantity": {
+            "type": "integer"
+          }
+        }
+      },
+      "OrderOut": {
+        "type": "object",
+        "required": [
+          "id",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "DiscountRequest": {
+        "type": "object",
+        "required": [
+          "expression"
+        ],
+        "properties": {
+          "expression": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
