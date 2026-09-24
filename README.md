@@ -194,6 +194,7 @@ Demonstrar as restrições de segurança **sem gastar API** (servidor MCP real):
 | [`docs/arquitetura.md`](docs/arquitetura.md) | Arquitetura, decisões e critérios de aceitação por etapa |
 | [`docs/matriz_requisitos.md`](docs/matriz_requisitos.md) | Requisito do professor → implementação → evidência |
 | [`docs/roteiro_apresentacao.md`](docs/roteiro_apresentacao.md) | Roteiro de 15 min (5 integrantes), plano B, perguntas da arguição |
+| [`docs/guia_execucao_apresentacao.md`](docs/guia_execucao_apresentacao.md) | Passo a passo para rodar a demo no dia (e plano B) |
 | [`docs/relatorio/relatorio.pdf`](docs/relatorio/relatorio.pdf) | Relatório técnico (fonte editável: `relatorio.md`) |
 | [`docs/evidencias/`](docs/evidencias/README.md) | Execuções reais: artefatos, logs e avaliação |
 

@@ -1,7 +1,8 @@
 # Agente de Auditoria Estática de Código Python e Documentação de APIs com MCP
 
 <p class="meta"><b>SENAI FATESG</b> · Tecnologia em Inteligência Artificial · Tecnologias Emergentes — Avaliação N2 (Proposta 1) · Prof. Allan Braga<br>
-<b>Equipe:</b> Bruno, Daniel, Jorge, José e Rafael · Goiânia, setembro de 2026</p>
+<b>Equipe:</b> Bruno, Daniel, Jorge, José e Rafael · Goiânia, setembro de 2026<br>
+<b>Repositório:</b> <a href="https://github.com/rafaelmtavares44/agente-auditoria-mcp">https://github.com/rafaelmtavares44/agente-auditoria-mcp</a> (código, testes, evidências e instruções de execução no README)</p>
 
 ## 1. Contexto e objetivo
 
@@ -133,7 +134,8 @@ limites, gerou e validou os quatro artefatos e deixou rastros verificáveis. As 
   risco de conteúdo malicioso direcionado a agentes.
 
 **Uso de IA no desenvolvimento:** o código e os documentos foram produzidos com apoio de um assistente de IA (Claude) e
-revisados pela equipe; os resultados relatados vêm de execuções e testes reais, cujos registros estão em `docs/evidencias/`.
+revisados pela equipe; os resultados relatados vêm de execuções e testes reais, cujos registros estão em `docs/evidencias/`
+do repositório (https://github.com/rafaelmtavares44/agente-auditoria-mcp).
 
 ## 9. Referências consultadas
 

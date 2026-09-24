@@ -6,15 +6,17 @@ A divisão abaixo é uma sugestão: ajustem para que cada um apresente a parte q
 
 ## Linha do tempo
 
-| Tempo | Quem | Bloco | O que mostrar |
+Comandos do dia: [`guia_execucao_apresentacao.md`](guia_execucao_apresentacao.md).
+
+| Tempo | Quem | Slides | Bloco |
 |---|---|---|---|
-| 0:00–2:00 | **Bruno** | Problema e objetivo | Por que agentes que *agem* exigem controle; o que é MCP; objetivo do projeto. |
-| 2:00–4:30 | **Daniel** | Arquitetura e fluxo de dados | Figura 1 do relatório: duas conexões (API na nuvem × MCP local via stdio); o que é enviado ao provedor; as 5 ferramentas. |
-| 4:30–8:00 | **Rafael** | **Execução real ao vivo** | Rodar a CLI e narrar o progresso: MCP conectado → linter/extrator → leitura → gravação dos 4 artefatos → validação → `completed`. |
-| 8:00–10:00 | **Jorge** | Logs e artefatos | Abrir `execucao.jsonl` (um `tool_call` e seu `tool_result` com o mesmo id), `findings.json` (linter × hipótese), `openapi.json` e a avaliação (7/7, 10/10). |
-| 10:00–12:00 | **José** | Restrição de segurança | Mostrar o comentário de *prompt injection* no código; rodar `demo_restricoes` (7 bloqueios + 1 permitido); explicar as 3 camadas. |
-| 12:00–14:00 | **Bruno** e **Daniel** | Resultados, limitações e conclusões | Tabela de métricas; variabilidade (4 × 2 hipóteses); custo ~US$ 0,30 e latência 99% no modelo; falhas por limite de gasto; prontidão para o mercado. |
-| 14:00–15:00 | Todos | Fechamento | Uma frase de conclusão e abertura para perguntas. |
+| 0:00–2:00 | **Bruno** | 1–4 | Problema, MCP e objetivo |
+| 2:00–4:30 | **Daniel** | 5–8 | Arquitetura, dados, ferramentas e código de uma ferramenta MCP |
+| 4:30–8:00 | **Rafael** | 9–12 | **Execução real ao vivo** + ciclo do agente e código do orquestrador |
+| 8:00–10:00 | **Jorge** | 13–14 | Logs, achados e avaliação da execução que acabou de rodar |
+| 10:00–12:00 | **José** | 15–17 | Prompt injection, três camadas e `demo_restricoes` |
+| 12:00–14:30 | **Bruno** e **Daniel** | 18–20 | Trade-offs, limitações e conclusões |
+| 14:30–15:00 | Todos | 21 | Encerramento e perguntas |
 
 > Dica para o bloco do Rafael: a execução leva ~2 minutos. Iniciem o comando logo no começo do bloco e narrem enquanto ele roda.
 > Se passar de 3 minutos ou a API falhar, mudem para o **plano B** sem perder tempo.
