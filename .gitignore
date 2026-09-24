@@ -26,6 +26,3 @@ Thumbs.db
 # Intermediário do relatório (o PDF e o .md são versionados)
 docs/relatorio/relatorio.html
 
-# Material interno da equipe (não publicar)
-falas*.md
-falas*.pdf
